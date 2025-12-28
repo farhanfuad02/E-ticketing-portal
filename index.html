@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-ticketing website</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://kit.fontawesome.com/f5f76d9d5f.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <!-- Navbar -->
+        <nav class="container mx-auto my-5">
+            <div class="navbar bg-base-100">
+                <div class="navbar-start">
+                    <div class="dropdown">
+                        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h8m-8 6h16" />
+                            </svg>
+                        </div>
+                        <ul tabindex="-1"
+                            class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow gap-4">
+                            <li><a>Home</a></li>
+                            <li><a>About</a></li>
+                            <li><a>Destinations</a></li>
+                            <li><a>Search</a></li>
+                        </ul>
+                    </div>
+                    <a class="btn btn-ghost text-3xl font-extrabold">E-Ticket</a>
+                </div>
+                <div class="navbar-center hidden lg:flex">
+                    <ul class="menu menu-horizontal px-1 gap-8 text-lg font-medium">
+                        <li><a>Home</a></li>
+                        <li><a>About</a></li>
+                        <li><a>Destinations</a></li>
+                        <li><a>Search</a></li>
+                    </ul>
+                </div>
+                <div class="navbar-end">
+                    <a class="btn btn-active btn-accent bg-[#c1edba] text-xl font-bold px-8 text-green-600 border-none">Bus
+                        <img src="images/bus-icon.png" alt=""></a>
+                </div>
+            </div>
+        </nav>
+        <!-- banner -->
+        <section class="container mx-auto relative mb-20 md:mb-28">
+            <div
+                class="bg-[url(images/banner.png)] bg-no-repeat bg-cover bg-center min-h-[550px] w-full rounded-[32px] flex flex-col items-center justify-center text-center text-white space-y-6">
+                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight">End-to-End Travel with <br> <span
+                        class="text-[#1DD100]">P
+                        Paribahan</span></h1>
+                <p class="max-w-2xl px-4">Yes, you can run unit tests and view the results directly within the app. The
+                    integrated testing features allow for a streamlined .</p>
+                <button class="btn bg-[#1DD100] border-none text-black font-bold text-lg px-6">Buy Tickets</button>
+            </div>
+
+            <!-- Info Cards -->
+            <div
+                class="flex flex-col md:flex-row justify-center gap-6 relative md:absolute md:-bottom-16 left-0 right-0 mt-10 md:mt-0 items-center z-10">
+                <!-- Card 1 -->
+                <div
+                    class="flex items-center gap-4 bg-white shadow-xl rounded-3xl p-8 border-b-[3px] border-[#1DD100] w-64">
+                    <img src="images/people.png" alt="">
+                    <div>
+                        <h1 class="text-3xl font-bold text-black">500K+</h1>
+                        <p class="text-gray-500">Registered users</p>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div
+                    class="flex items-center gap-4 bg-white shadow-xl rounded-3xl p-8 border-b-[3px] border-[#1DD100] w-64">
+                    <img src="images/ticket-cupon.png" alt="">
+                    <div>
+                        <h1 class="text-3xl font-bold text-black">1.7 lacks</h1>
+                        <p class="text-gray-500">Tickets sold</p>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div
+                    class="flex items-center gap-4 bg-white shadow-xl rounded-3xl p-8 border-b-[3px] border-[#1DD100] w-64">
+                    <img src="images/stoppage.png" alt="">
+                    <div>
+                        <h1 class="text-3xl font-bold text-black">80K+</h1>
+                        <p class="text-gray-500">Rental partners</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- offers -->
+        <section class="container mx-auto mb-24 px-4">
+            <h1 class="text-4xl font-bold text-center mb-12">Best offers for you</h1>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <!-- Coupon 1 -->
+                <div
+                    class="bg-[#FFBF0F] rounded-3xl flex flex-col md:flex-row items-center justify-between p-8 md:p-12 gap-4 text-center md:text-left">
+                    <div class="font-inter">
+                        <h2 class="text-3xl md:text-4xl font-black text-[#030712CC]">15% OFF</h2>
+                        <p class="text-lg md:text-xl font-semibold text-[#030712CC]">on your next purchase</p>
+                        <p class="text-base md:text-lg text-[#03071280]">use by January 2024</p>
+                    </div>
+                    <img src="images/cupon-devider.png" alt="" class="rotate-90 md:rotate-0">
+                    <div class="font-raleway flex flex-col items-center">
+                        <h2 class="text-2xl md:text-3xl font-bold text-[#030712]">NEW15</h2>
+                        <p class="text-lg md:text-xl text-[#03071266]">Coupon Code</p>
+                    </div>
+                </div>
+                <!-- Coupon 2 -->
+                <div
+                    class="bg-[#F78C9C] rounded-3xl flex flex-col md:flex-row items-center justify-between p-8 md:p-12 gap-4 text-center md:text-left">
+                    <div class="font-inter">
+                        <h2 class="text-3xl md:text-4xl font-black text-[#030712CC]">20% OFF</h2>
+                        <p class="text-lg md:text-xl font-semibold text-[#030712CC]">on your next purchase</p>
+                        <p class="text-base md:text-lg text-[#03071280]">use by January 2024</p>
+                    </div>
+                    <img src="images/cupon-devider.png" alt="" class="rotate-90 md:rotate-0">
+                    <div class="font-raleway flex flex-col items-center">
+                        <h2 class="text-2xl md:text-3xl font-bold text-[#030712]">Couple 20</h2>
+                        <p class="text-lg md:text-xl text-[#03071266]">Coupon Code</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flex justify-center mt-14">
+                <button
+                    class="btn btn-outline border-[#1DD100] text-[#1DD100] font-bold text-lg px-8 hover:bg-[#1DD100] hover:text-white transition-colors duration-300">See
+                    all offers</button>
+            </div>
+        </section>
+    </header>
+    <main class="bg-[#F7F8F8] border-t-2 border-t-[#1dd100] rounded-t-[88px]">
+        <!-- Paribahan Header -->
+        <section class="container mx-auto pt-24 pb-12 text-center space-y-4">
+            <h1 class="text-4xl font-bold text-[#030712]">P.H Paribahan</h1>
+            <p class="max-w-3xl mx-auto text-[#03071299]">Yes, you can run unit tests and view the results directly
+                within the app. The integrated testing features allow for a streamlined .</p>
+        </section>
+
+        <!-- Route Card -->
+        <section class="container mx-auto mb-10">
+            <div
+                class="bg-white rounded-3xl w-full flex flex-col lg:flex-row overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
+                <!-- Left: Bus Info -->
+                <div class="p-10 flex-1">
+                    <div class="flex flex-col sm:flex-row justify-between items-center mb-6">
+                        <div class="flex items-center gap-4">
+                            <img src="images/bus-logo.png" alt="Bus Logo">
+                            <div>
+                                <h2 class="text-3xl font-bold text-[#030712]">Greenline Paribahan</h2>
+                                <p class="text-[#03071299]">Coach-009-WEB ! AC_Business</p>
+                            </div>
+                        </div>
+                        <button class="btn bg-[#1DD1001A] text-[#1DD100] border-none font-bold mt-4 sm:mt-0"><img
+                                src="images/seat-green.png" alt=""> 40 Seats left</button>
+                    </div>
+
+                    <div class="bg-[#F7F8F8] p-8 rounded-3xl space-y-6">
+                        <div
+                            class="flex justify-between items-center border-b-[1px] border-dashed border-[#03071233] pb-4">
+                            <span class="text-[#03071299]">Route</span>
+                            <span class="font-semibold text-[#030712]">Dhaka - Sylhet</span>
+                        </div>
+                        <div
+                            class="flex justify-between items-center border-b-[1px] border-dashed border-[#03071233] pb-4">
+                            <span class="text-[#03071299]">Departure Time</span>
+                            <span class="font-semibold text-[#030712]">9:00 PM</span>
+                        </div>
+                        <div class="flex flex-wrap gap-4 pt-2">
+                            <div class="bg-[#0307120D] p-4 rounded-xl flex-1 text-center font-medium text-[#030712CC]">
+                                Boarding Point - Laxmipur</div>
+                            <div class="bg-[#0307120D] p-4 rounded-xl flex-1 text-center font-medium text-[#030712CC]">
+                                Dropping Point - Bogura</div>
+                            <div class="bg-[#0307120D] p-4 rounded-xl flex-1 text-center font-medium text-[#030712CC]">
+                                Est. Time - 11 Hour</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Divider Image -->
+                <img src="images/info-devider.png" alt="" class="hidden lg:block h-auto">
+
+                <!-- Right: Fare Info -->
+                <div class="p-10 lg:w-1/4 flex flex-col justify-center items-center text-center space-y-4">
+                    <img src="images/fare.png" alt="">
+                    <h2 class="text-3xl font-bold text-[#030712]">550 Taka</h2>
+                    <p class="text-[#03071299] text-xl font-semibold">Per Seat</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ticket / Booking Section -->
+        <section class="bg-white rounded-t-[88px] p-12 pb-24">
+            <div class="container mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12">
+
+                <!-- Left Column: Seat Layout (60%) -->
+                <div class="lg:col-span-7 lg:border-r-2 border-r-0 lg:border-dashed lg:border-[#0307124D] lg:pr-10">
+                    <h2 class="text-2xl font-bold text-[#030712] mb-6">Select Your Seat</h2>
+                    <div class="border-b-[1px] border-dashed border-[#03071233] mb-6"></div>
+
+                    <div class="flex justify-between items-center mb-6">
+                        <div class="flex items-center gap-2">
+                            <img src="images/seat-gray.png" alt="">
+                            <span class="text-[#03071280] font-medium">Available</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <img src="images/seat-green-filled.png" alt="">
+                            <span class="text-[#1DD100] font-medium">Selected</span>
+                        </div>
+                    </div>
+
+                    <!-- Driver Wheel -->
+                    <div class="flex justify-end mb-6">
+                        <button class="btn bg-[#0307121A] border-none px-8 py-3"><i
+                                class="fa-solid fa-dharmachakra text-3xl"></i></button>
+                    </div>
+
+                    <!-- Seat Grid -->
+                    <div class="space-y-3 md:space-y-6">
+                        <!-- Row A -->
+                        <div class="flex items-center gap-4 md:gap-8">
+                            <span class="text-[#03071280] w-6">A</span>
+                            <div class="flex-1 grid grid-cols-2 gap-2 md:gap-4">
+                                <button
+                                    class="btn w-full bg-[#F7F8F8] border-none hover:bg-[#1DD100] hover:text-white transition-colors text-[#03071280] text-sm md:text-base">A1</button>
+                                <button
+                                    class="btn w-full bg-[#F7F8F8] border-none hover:bg-[#1DD100] hover:text-white transition-colors text-[#03071280] text-sm md:text-base">A2</button>
+                            </div>
+                            <div class="flex-1 grid grid-cols-2 gap-2 md:gap-4">
+                                <button
+                                    class="btn w-full bg-[#F7F8F8] border-none hover:bg-[#1DD100] hover:text-white transition-colors text-[#03071280] text-sm md:text-base">A3</button>
+                                <button
+                                    class="btn w-full bg-[#F7F8F8] border-none hover:bg-[#1DD100] hover:text-white transition-colors text-[#03071280] text-sm md:text-base">A4</button>
+                            </div>
+                        </div>
+                        <!-- Row B -->
+                        <div class="flex items-center gap-4 md:gap-8">
+                            <span class="text-[#03071280] w-6">B</span>
+                            <div class="flex-1 grid grid-cols-2 gap-2 md:gap-4">
+                                <button
+                                    class="btn w-full bg-[#F7F8F8] border-none hover:bg-[#1DD100] hover:text-white transition-colors text-[#03071280] text-sm md:text-base">B1</button>
+                                <button
+                                    class="btn w-full bg-[#F7F8F8] border-none hover:bg-[#1DD100] hover:text-white transition-colors text-[#03071280] text-sm md:text-base">B2</button>
+                            </div>
+                            <div class="flex-1 grid grid-cols-2 gap-2 md:gap-4">
+                                <button
+                                    class="btn w-full bg-[#F7F8F8] border-none hover:bg-[#1DD100] hover:text-white transition-colors text-[#03071280] text-sm md:text-base">B3</button>
+                                <button
+                                    class="btn w-full bg-[#F7F8F8] border-none hover:bg-[#1DD100] hover:text-white transition-colors text-[#03071280] text-sm md:text-base">B4</button>
+                            </div>
+                        </div>
+                        <!-- Row C -->
+                        <div class="flex items-center gap-4 md:gap-8">
+                            <span class="text-[#03071280] w-6">C</span>
+                            <div class="flex-1 grid grid-cols-2 gap-2 md:gap-4">
+                                <button
+                                    class="btn w-full bg-[#F7F8F8] border-none hover:bg-[#1DD100] hover:text-white transition-colors text-[#03071280] text-sm md:text-base">C1</button>
+                                <button
+                                    class="btn w-full bg-[#F7F8F8] border-none hover:bg-[#1DD100] hover:text-white transition-colors text-[#03071280] text-sm md:text-base">C2</button>
+                            </div>
+                            <div class="flex-1 grid grid-cols-2 gap-2 md:gap-4">
+                                <button
+                                    class="btn w-full bg-[#F7F8F8] border-none hover:bg-[#1DD100] hover:text-white transition-colors text-[#03071280] text-sm md:text-base">C3</button>
+                                <button
+                                    class="btn w-full bg-[#F7F8F8] border-none hover:bg-[#1DD100] hover:text-white transition-colors text-[#03071280] text-sm md:text-base">C4</button>
+                            </div>
+                        </div>
+                        <!-- Row D -->
+                        <div class="flex items-center gap-4 md:gap-8">
+                            <span class="text-[#03071280] w-6">D</span>
+                            <div class="flex-1 grid grid-cols-2 gap-2 md:gap-4">
+                                <button
+                                    class="btn w-full bg-[#F7F8F8] border-none hover:bg-[#1DD100] hover:text-white transition-colors text-[#03071280] text-sm md:text-base">D1</button>
+                                <button
+                                    class="btn w-full bg-[#F7F8F8] border-none hover:bg-[#1DD100] hover:text-white transition-colors text-[#03071280] text-sm md:text-base">D2</button>
+                            </div>
+                            <div class="flex-1 grid grid-cols-2 gap-2 md:gap-4">
+                                <button
+                                    class="btn w-full bg-[#F7F8F8] border-none hover:bg-[#1DD100] hover:text-white transition-colors text-[#03071280] text-sm md:text-base">D3</button>
+                                <button
+                                    class="btn w-full bg-[#F7F8F8] border-none hover:bg-[#1DD100] hover:text-white transition-colors text-[#03071280] text-sm md:text-base">D4</button>
+                            </div>
+                        </div>
+                        <!-- Row E -->
+                        <div class="flex items-center gap-4 md:gap-8">
+                            <span class="text-[#03071280] w-6">E</span>
+                            <div class="flex-1 grid grid-cols-2 gap-2 md:gap-4">
+                                <button
+                                    class="btn w-full bg-[#F7F8F8] border-none hover:bg-[#1DD100] hover:text-white transition-colors text-[#03071280] text-sm md:text-base">E1</button>
+                                <button
+                                    class="btn w-full bg-[#F7F8F8] border-none hover:bg-[#1DD100] hover:text-white transition-colors text-[#03071280] text-sm md:text-base">E2</button>
+                            </div>
+                            <div class="flex-1 grid grid-cols-2 gap-2 md:gap-4">
+                                <button
+                                    class="btn w-full bg-[#F7F8F8] border-none hover:bg-[#1DD100] hover:text-white transition-colors text-[#03071280] text-sm md:text-base">E3</button>
+                                <button
+                                    class="btn w-full bg-[#F7F8F8] border-none hover:bg-[#1DD100] hover:text-white transition-colors text-[#03071280] text-sm md:text-base">E4</button>
+                            </div>
+                        </div>
+                        <!-- Row F -->
+                        <div class="flex items-center gap-4 md:gap-8">
+                            <span class="text-[#03071280] w-6">F</span>
+                            <div class="flex-1 grid grid-cols-2 gap-2 md:gap-4">
+                                <button
+                                    class="btn w-full bg-[#F7F8F8] border-none hover:bg-[#1DD100] hover:text-white transition-colors text-[#03071280] text-sm md:text-base">F1</button>
+                                <button
+                                    class="btn w-full bg-[#F7F8F8] border-none hover:bg-[#1DD100] hover:text-white transition-colors text-[#03071280] text-sm md:text-base">F2</button>
+                            </div>
+                            <div class="flex-1 grid grid-cols-2 gap-2 md:gap-4">
+                                <button
+                                    class="btn w-full bg-[#F7F8F8] border-none hover:bg-[#1DD100] hover:text-white transition-colors text-[#03071280] text-sm md:text-base">F3</button>
+                                <button
+                                    class="btn w-full bg-[#F7F8F8] border-none hover:bg-[#1DD100] hover:text-white transition-colors text-[#03071280] text-sm md:text-base">F4</button>
+                            </div>
+                        </div>
+                        <!-- Row G -->
+                        <div class="flex items-center gap-4 md:gap-8">
+                            <span class="text-[#03071280] w-6">G</span>
+                            <div class="flex-1 grid grid-cols-2 gap-2 md:gap-4">
+                                <button
+                                    class="btn w-full bg-[#F7F8F8] border-none hover:bg-[#1DD100] hover:text-white transition-colors text-[#03071280] text-sm md:text-base">G1</button>
+                                <button
+                                    class="btn w-full bg-[#F7F8F8] border-none hover:bg-[#1DD100] hover:text-white transition-colors text-[#03071280] text-sm md:text-base">G2</button>
+                            </div>
+                            <div class="flex-1 grid grid-cols-2 gap-2 md:gap-4">
+                                <button
+                                    class="btn w-full bg-[#F7F8F8] border-none hover:bg-[#1DD100] hover:text-white transition-colors text-[#03071280] text-sm md:text-base">G3</button>
+                                <button
+                                    class="btn w-full bg-[#F7F8F8] border-none hover:bg-[#1DD100] hover:text-white transition-colors text-[#03071280] text-sm md:text-base">G4</button>
+                            </div>
+                        </div>
+                        <!-- Row H -->
+                        <div class="flex items-center gap-4 md:gap-8">
+                            <span class="text-[#03071280] w-6">H</span>
+                            <div class="flex-1 grid grid-cols-2 gap-2 md:gap-4">
+                                <button
+                                    class="btn w-full bg-[#F7F8F8] border-none hover:bg-[#1DD100] hover:text-white transition-colors text-[#03071280] text-sm md:text-base">H1</button>
+                                <button
+                                    class="btn w-full bg-[#F7F8F8] border-none hover:bg-[#1DD100] hover:text-white transition-colors text-[#03071280] text-sm md:text-base">H2</button>
+                            </div>
+                            <div class="flex-1 grid grid-cols-2 gap-2 md:gap-4">
+                                <button
+                                    class="btn w-full bg-[#F7F8F8] border-none hover:bg-[#1DD100] hover:text-white transition-colors text-[#03071280] text-sm md:text-base">H3</button>
+                                <button
+                                    class="btn w-full bg-[#F7F8F8] border-none hover:bg-[#1DD100] hover:text-white transition-colors text-[#03071280] text-sm md:text-base">H4</button>
+                            </div>
+                        </div>
+                        <!-- Row I -->
+                        <div class="flex items-center gap-4 md:gap-8">
+                            <span class="text-[#03071280] w-6">I</span>
+                            <div class="flex-1 grid grid-cols-2 gap-2 md:gap-4">
+                                <button
+                                    class="btn w-full bg-[#F7F8F8] border-none hover:bg-[#1DD100] hover:text-white transition-colors text-[#03071280] text-sm md:text-base">I1</button>
+                                <button
+                                    class="btn w-full bg-[#F7F8F8] border-none hover:bg-[#1DD100] hover:text-white transition-colors text-[#03071280] text-sm md:text-base">I2</button>
+                            </div>
+                            <div class="flex-1 grid grid-cols-2 gap-2 md:gap-4">
+                                <button
+                                    class="btn w-full bg-[#F7F8F8] border-none hover:bg-[#1DD100] hover:text-white transition-colors text-[#03071280] text-sm md:text-base">I3</button>
+                                <button
+                                    class="btn w-full bg-[#F7F8F8] border-none hover:bg-[#1DD100] hover:text-white transition-colors text-[#03071280] text-sm md:text-base">I4</button>
+                            </div>
+                        </div>
+                        <!-- Row J -->
+                        <div class="flex items-center gap-4 md:gap-8">
+                            <span class="text-[#03071280] w-6">J</span>
+                            <div class="flex-1 grid grid-cols-2 gap-2 md:gap-4">
+                                <button
+                                    class="btn w-full bg-[#F7F8F8] border-none hover:bg-[#1DD100] hover:text-white transition-colors text-[#03071280] text-sm md:text-base">J1</button>
+                                <button
+                                    class="btn w-full bg-[#F7F8F8] border-none hover:bg-[#1DD100] hover:text-white transition-colors text-[#03071280] text-sm md:text-base">J2</button>
+                            </div>
+                            <div class="flex-1 grid grid-cols-2 gap-2 md:gap-4">
+                                <button
+                                    class="btn w-full bg-[#F7F8F8] border-none hover:bg-[#1DD100] hover:text-white transition-colors text-[#03071280] text-sm md:text-base">J3</button>
+                                <button
+                                    class="btn w-full bg-[#F7F8F8] border-none hover:bg-[#1DD100] hover:text-white transition-colors text-[#03071280] text-sm md:text-base">J4</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Details & Form (40%) -->
+                <div class="lg:col-span-5">
+                    <h2 class="text-2xl font-bold text-[#030712] mb-6">Select Your Seat</h2>
+                    <div class="border-b-[1px] border-dashed border-[#03071233] mb-6"></div>
+
+                    <div class="bg-[#F7F8F8] rounded-xl p-8 mb-6">
+                        <div
+                            class="flex justify-between font-bold text-[#030712] border-b-[1px] border-dashed border-[#03071233] pb-4 mb-4">
+                            <span>Seat <span class="bg-[#1DD100] text-white px-2 rounded-full text-sm">0</span></span>
+                            <span>Class</span>
+                            <span>Price</span>
+                        </div>
+                        <ul class="space-y-4 mb-4 text-[#03071299]">
+                            <!-- Selected seats will go here -->
+                            <!-- Example: 
+                             <li class="flex justify-between">
+                                <span>C2</span>
+                                <span>Economoy</span>
+                                <span>550</span>
+                             </li> -->
+                        </ul>
+                        <div
+                            class="border-t-[1px] border-[#03071233] pt-4 flex justify-between font-bold text-[#030712]">
+                            <span>Total Price</span>
+                            <span>BDT 0</span>
+                        </div>
+
+                        <!-- Coupon Input (Optional but good for polish) -->
+                        <div class="mt-6 relative">
+                            <input type="text" placeholder="Have any copupon?" class="input input-bordered w-full pr-20"
+                                disabled />
+                            <button class="btn bg-[#1DD100] text-white absolute top-0 right-0 rounded-l-none"
+                                disabled>Apply</button>
+                        </div>
+
+                        <div class="mt-6 flex justify-between font-bold text-[#030712]">
+                            <span>Grand Total</span>
+                            <span>BDT 0</span>
+                        </div>
+                    </div>
+
+                    <!-- Form -->
+                    <form class="space-y-6">
+                        <div class="form-control">
+                            <label class="label">
+                                <span class="label-text font-bold text-[#030712]">Passenger Name*</span>
+                            </label>
+                            <input type="text" placeholder="Enter your name" class="input input-bordered w-full py-6" />
+                        </div>
+                        <div class="form-control">
+                            <label class="label">
+                                <span class="label-text font-bold text-[#030712]">Phone Number*</span>
+                            </label>
+                            <input type="number" placeholder="Enter your phone number"
+                                class="input input-bordered w-full py-6" />
+                        </div>
+                        <div class="form-control">
+                            <label class="label">
+                                <span class="label-text font-bold text-[#030712]">Email ID</span>
+                            </label>
+                            <input type="email" placeholder="Enter your email id"
+                                class="input input-bordered w-full py-6" />
+                        </div>
+                        <button
+                            class="btn bg-[#1DD100] w-full text-white font-bold text-xl py-4 border-none hover:bg-[#19b300]">Next</button>
+                    </form>
+
+                    <div class="flex justify-between mt-6">
+                        <a href="#" class="link link-hover text-[#03071299] underline decoration-solid">Terms and
+                            Conditions</a>
+                        <a href="#" class="link link-hover text-[#03071299] underline decoration-solid">Cancellation
+                            Policy</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- success modal frame -->
+        <section id="success-message" class="hidden fixed inset-0 bg-[#00000099] flex justify-center items-center z-50">
+            <div class="bg-white rounded-[32px] p-12 max-w-lg w-full text-center space-y-6 mx-4">
+                <img src="images/success.png" alt="Success" class="mx-auto block mb-6">
+                <h2 class="text-[#27AE60] text-2xl font-bold uppercase tracking-widest">Success</h2>
+
+                <div class="space-y-2">
+                    <p class="text-[#4A4A4A] font-bold text-lg">Thank you for Booking Our Bus Seats.</p>
+                    <p class="text-[#4A4A4A] font-medium">We are working hard to find the best service and deals for
+                        you.</p>
+                </div>
+
+                <p class="text-[#4A4A4A] text-sm font-light">Shortly you will find a confirmation in your email.</p>
+
+                <button
+                    class="btn bg-[#27AE60] hover:bg-[#219150] border-none text-white rounded-full px-16 py-3 font-bold text-xl w-3/4 mx-auto block mt-8">Continue</button>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-[#030712] text-white py-24">
+        <div class="container mx-auto px-4">
+            <!-- Top Section -->
+            <div class="flex flex-col md:flex-row justify-between items-center mb-12">
+                <div class="space-y-4 text-center md:text-left">
+                    <h1 class="text-4xl font-extrabold text-white">P-Ticket</h1>
+                    <p class="text-[#ffffffcc] max-w-sm">P-Ticket is a digital platform to make your daily commuting
+                        better.</p>
+                </div>
+                <div class="space-y-4 mt-8 md:mt-0 text-center md:text-right">
+                    <h3 class="text-xl font-semibold text-white">Download our app</h3>
+                    <div class="flex justify-center md:justify-end">
+                        <img src="images/playstore.png" alt="Download on Play Store"
+                            class="cursor-pointer border border-white rounded-lg p-2">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Divider -->
+            <div class="border-b-[1px] border-dashed border-[#ffffff4d] mb-12"></div>
+
+            <!-- Bottom Section -->
+            <div class="flex flex-col md:flex-row justify-between items-center text-[#ffffffb3] text-sm">
+                <p class="mb-4 md:mb-0">@all rights reserved, P-Ticket services limited.2024</p>
+                <div class="flex gap-8">
+                    <a href="#" class="hover:text-white transition-colors">Terms & condition</a>
+                    <a href="#" class="hover:text-white transition-colors">Return & refund policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Privacy policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
