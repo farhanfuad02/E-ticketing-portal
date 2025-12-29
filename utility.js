@@ -32,6 +32,16 @@
             }
         }
 
+        let appliedDiscountPercent = 0;
+
+        function applyCouponCode(code) {
+            if (!code) return 0;
+            const c = code.trim().toUpperCase();
+            if (c === 'NEW15') return 15;
+            if (c === 'COUPLE20') return 20;
+            return 0;
+        }
+
         function updateSelectedListUI() {
             const list = document.querySelector('ul.space-y-4');
             if (!list) return;
@@ -42,31 +52,73 @@
                 li.innerHTML = `<span>${label}</span><span>Class</span><span>BDT ${PRICE}</span>`;
                 list.appendChild(li);
             });
+            // compute totals and discount
+            const subtotal = selected.size * PRICE;
+            const discount = Math.round((subtotal * appliedDiscountPercent) / 100);
+            const grandTotal = subtotal - discount;
 
-            // Update Total Price and Grand Total: handle multiple elements (duplicate IDs) and fallbacks
+            // Update Total Price elements (may be duplicate IDs)
             const totalEls = Array.from(document.querySelectorAll('#total-price'));
             if (totalEls.length > 0) {
                 totalEls.forEach(el => {
-                    el.textContent = `BDT ${selected.size * PRICE}`;
+                    el.textContent = `BDT ${subtotal}`;
                 });
             } else {
                 const totalDiv = Array.from(document.querySelectorAll('div')).find(d => d.textContent && d.textContent.includes('Total Price'));
                 if (totalDiv) {
                     const spans = totalDiv.querySelectorAll('span');
-                    if (spans.length >= 2) spans[1].textContent = `BDT ${selected.size * PRICE}`;
+                    if (spans.length >= 2) spans[1].textContent = `BDT ${subtotal}`;
                 }
             }
 
+            // Update Grand Total elements
             const grandEls = Array.from(document.querySelectorAll('#grand-total'));
             if (grandEls.length > 0) {
-                grandEls.forEach(el => el.textContent = `BDT ${selected.size * PRICE}`);
+                grandEls.forEach(el => el.textContent = `BDT ${grandTotal}`);
             } else {
                 const grandDiv = Array.from(document.querySelectorAll('div')).find(d => d.textContent && d.textContent.includes('Grand Total'));
                 if (grandDiv) {
                     const spans = grandDiv.querySelectorAll('span');
-                    if (spans.length >= 2) spans[1].textContent = `BDT ${selected.size * PRICE}`;
+                    if (spans.length >= 2) spans[1].textContent = `BDT ${grandTotal}`;
                 }
             }
+
+            // Enable/disable coupon UI when user has selected enough seats
+            try {
+                const couponInput = document.getElementById('coupon-code');
+                const applyBtn = document.getElementById('apply-coupon');
+                if (couponInput && applyBtn) {
+                    const enableCoupon = selected.size >= MAX_SELECTION;
+                    couponInput.disabled = !enableCoupon;
+                    applyBtn.disabled = !enableCoupon;
+                    if (!enableCoupon) {
+                        // clear any applied coupon when not eligible
+                        appliedDiscountPercent = 0;
+                        couponInput.value = '';
+                    }
+                }
+            } catch (e) {
+                // ignore if elements not present
+            }
+        }
+
+        // wire up coupon apply handler (if present)
+        function setupCouponHandlers() {
+            const couponInput = document.getElementById('coupon-code');
+            const applyBtn = document.getElementById('apply-coupon');
+            if (!couponInput || !applyBtn) return;
+
+            applyBtn.addEventListener('click', (e) => {
+                const code = couponInput.value || '';
+                const pct = applyCouponCode(code);
+                if (pct === 0) {
+                    alert('Invalid coupon code');
+                    appliedDiscountPercent = 0;
+                } else {
+                    appliedDiscountPercent = pct;
+                }
+                updateSelectedListUI();
+            });
         }
 
         seatButtons.forEach(btn => {
@@ -94,7 +146,8 @@
             });
         });
 
-        // initial render
+        // setup coupon handlers and initial render
+        setupCouponHandlers();
         updateCounters();
         updateSelectedListUI();
     };
