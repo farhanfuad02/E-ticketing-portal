@@ -428,29 +428,29 @@
                     </div>
 
                     <!-- Form -->
-                    <form class="space-y-6">
+                        <form class="space-y-6">
                         <div class="form-control">
                             <label class="label">
                                 <span class="label-text font-bold text-[#030712]">Passenger Name*</span>
                             </label>
-                            <input type="text" placeholder="Enter your name" class="input input-bordered w-full py-6" />
+                            <input id="passenger-name" type="text" placeholder="Enter your name" class="input input-bordered w-full py-6" />
                         </div>
                         <div class="form-control">
                             <label class="label">
                                 <span class="label-text font-bold text-[#030712]">Phone Number*</span>
                             </label>
-                            <input type="number" placeholder="Enter your phone number"
+                            <input id="passenger-phone" type="tel" placeholder="Enter your phone number"
                                 class="input input-bordered w-full py-6" />
                         </div>
                         <div class="form-control">
                             <label class="label">
                                 <span class="label-text font-bold text-[#030712]">Email ID</span>
                             </label>
-                            <input type="email" placeholder="Enter your email id"
+                            <input id="passenger-email" type="email" placeholder="Enter your email id"
                                 class="input input-bordered w-full py-6" />
                         </div>
-                        <button
-                            class="btn bg-[#1DD100] w-full text-white font-bold text-xl py-4 border-none hover:bg-[#19b300]">Next</button>
+                        <button id="next-button" type="button"
+                            class="btn bg-[#1DD100] w-full text-white font-bold text-xl py-4 border-none hover:bg-[#19b300]" disabled>Next</button>
                     </form>
 
                     <div class="flex justify-between mt-6">
@@ -476,7 +476,7 @@
 
                 <p class="text-[#4A4A4A] text-sm font-light">Shortly you will find a confirmation in your email.</p>
 
-                <button
+                <button id="confirm-continue"
                     class="btn bg-[#27AE60] hover:bg-[#219150] border-none text-white rounded-full px-16 py-3 font-bold text-xl w-3/4 mx-auto block mt-8">Continue</button>
             </div>
         </section>

@@ -121,6 +121,58 @@
             });
         }
 
+        // form handlers: enable Next when passenger info filled; show modal on Next
+        function setupFormHandlers() {
+            const nameEl = document.getElementById('passenger-name');
+            const phoneEl = document.getElementById('passenger-phone');
+            const emailEl = document.getElementById('passenger-email');
+            const nextBtn = document.getElementById('next-button');
+            const modal = document.getElementById('success-message');
+            const modalContinue = document.getElementById('confirm-continue');
+
+            if (!nextBtn) return;
+
+            function validateForm() {
+                const nameOk = nameEl && nameEl.value.trim() !== '';
+                const phoneOk = phoneEl && phoneEl.value.trim() !== '';
+                const emailOk = emailEl && emailEl.value.trim() !== '';
+                nextBtn.disabled = !(nameOk && phoneOk && emailOk);
+            }
+
+            // attach listeners
+            [nameEl, phoneEl, emailEl].forEach(el => {
+                if (el) el.addEventListener('input', validateForm);
+            });
+
+            // ensure initial state
+            validateForm();
+
+            let reloadTimer = null;
+
+            nextBtn.addEventListener('click', (e) => {
+                // only open modal when enabled
+                if (nextBtn.disabled) return;
+                if (modal) {
+                    modal.classList.remove('hidden');
+                    // schedule reload after 3 seconds to clear selections
+                    reloadTimer = setTimeout(() => {
+                        window.location.reload();
+                    }, 3000);
+                }
+            });
+
+            if (modalContinue) {
+                modalContinue.addEventListener('click', () => {
+                    // if timer present, clear and reload immediately
+                    if (reloadTimer) {
+                        clearTimeout(reloadTimer);
+                        reloadTimer = null;
+                    }
+                    window.location.reload();
+                });
+            }
+        }
+
         seatButtons.forEach(btn => {
             btn.style.cursor = 'pointer';
             btn.style.transition = 'background-color 0.15s, color 0.15s';
@@ -146,8 +198,9 @@
             });
         });
 
-        // setup coupon handlers and initial render
+        // setup coupon and form handlers and initial render
         setupCouponHandlers();
+        setupFormHandlers();
         updateCounters();
         updateSelectedListUI();
     };
