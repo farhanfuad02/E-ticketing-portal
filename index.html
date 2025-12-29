@@ -26,8 +26,11 @@
                         </div>
                         <ul tabindex="-1"
                             class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow gap-4">
-                            <li><a>Home</a></li>
+                                <span>BDT <span id="total-price">0</span> </span>
                             <li><a>About</a></li>
+                            <div class="mt-6 flex justify-between font-bold text-[#030712]">
+                                <span>Grand Total</span>
+                                <span>BDT <span id="grand-total">0</span></span>
                             <li><a>Destinations</a></li>
                             <li><a>Search</a></li>
                         </ul>
@@ -154,7 +157,7 @@
                                 <p class="text-[#03071299]">Coach-009-WEB ! AC_Business</p>
                             </div>
                         </div>
-                        <button class="btn bg-[#1DD1001A] text-[#1DD100] border-none font-bold mt-4 sm:mt-0"><img
+                        <button id="remaining-seat" class="btn bg-[#1DD1001A] text-[#1DD100] border-none font-bold mt-4 sm:mt-0"><img
                                 src="images/seat-green.png" alt=""> 40 Seats left</button>
                     </div>
 
@@ -391,7 +394,7 @@
                     <div class="bg-[#F7F8F8] rounded-xl p-8 mb-6">
                         <div
                             class="flex justify-between font-bold text-[#030712] border-b-[1px] border-dashed border-[#03071233] pb-4 mb-4">
-                            <span>Seat <span class="bg-[#1DD100] text-white px-2 rounded-full text-sm">0</span></span>
+                            <span>Seat <span id="seat-count" class="bg-[#1DD100] text-white px-2 rounded-full text-sm">0</span></span>
                             <span>Class</span>
                             <span>Price</span>
                         </div>
@@ -407,7 +410,7 @@
                         <div
                             class="border-t-[1px] border-[#03071233] pt-4 flex justify-between font-bold text-[#030712]">
                             <span>Total Price</span>
-                            <span>BDT 0</span>
+                            <span id="total-price">BDT 0</span>
                         </div>
 
                         <!-- Coupon Input (Optional but good for polish) -->
@@ -420,7 +423,7 @@
 
                         <div class="mt-6 flex justify-between font-bold text-[#030712]">
                             <span>Grand Total</span>
-                            <span>BDT 0</span>
+                            <span id="grand-total">BDT 0</span>
                         </div>
                     </div>
 
@@ -510,8 +513,8 @@
             </div>
         </div>
     </footer>
-    <script src="scripts.js"></script>
     <script src="utility.js"></script>
+    <script src="scripts.js"></script>
 </body>
 
 </html>
